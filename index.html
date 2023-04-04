@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Happify</title>
+  <style>
+    body {
+      /*   font-family: system-ui; */
+      /*   background: #f06d06; */
+      /*   color: white; */
+      text-align: center;
+    }
+
+
+    .header {
+      overflow: hidden;
+      padding: 20px 10px;
+    }
+
+    .header a {
+      float: left;
+      color: black;
+      text-align: center;
+      padding: 12px;
+      text-decoration: none;
+      font-size: 18px;
+      line-height: 25px;
+      border-radius: 4px;
+    }
+
+    .header a.logo {
+      font-size: 25px;
+      font-weight: bold;
+    }
+
+    .header a:hover {
+      background-color: #ddd;
+      color: black;
+    }
+
+    .header a.active {
+      background-color: dodgerblue;
+      color: white;
+    }
+
+    .header-right {
+      float: right;
+    }
+
+    @media screen and (max-width: 500px) {
+      .header a {
+        float: none;
+        display: block;
+        text-align: left;
+      }
+
+      .header-right {
+        float: none;
+      }
+    }
+
+    .main-area {
+      margin-left: 10%;
+      margin-right: 10%;
+      margin: 1% 10% 1% 10%;
+    }
+
+    .bar {
+      margin: 2% 0% 2% 0%;
+    }
+
+    .bar-1 {
+      border: 1px solid teal;
+    }
+
+    .search-bar {
+      width: 100%;
+      border: 0px;
+    }
+
+    .div-dental {
+      padding-left: 10%;
+      border: 1px solid teal;
+      color: lightblue;
+      background: url(https://th.bing.com/th/id/OIP.fv3xtmM7J2cPQV7SSVcKUQHaEK?w=296&h=180&c=7&o=5&dpr=2.5&pid=1.7);
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+
+    .dentists-near {
+      box-shadow: 15px 5px 15px teal;
+      display: inline-block;
+    }
+
+    .dentist-div {
+      column-gap: 40px;
+      margin-left: 100px;
+    }
+
+    .dentists {
+      border: 1px solid green;
+    }
+
+    .doctor-image {
+      border-radius: 50%;
+      margin-top: 10px;
+      height: 50%;
+      width: 50%;
+    }
+
+    .doctor-1 {
+      background-color: green;
+      height: 40%;
+      width: 100%;
+    }
+
+    .symptoms {
+      column-gap: 40px;
+    }
+
+    .symptom {
+      border: 1px solid green;
+    }
+
+    .icons {
+      font-size: 72px
+    }
+
+    .dental-health-1 {
+      margin-left: 40px;
+      margin-right: 45px;
+      border: 1px solid teal;
+      word-break: break-all;
+    }
+
+    .dental-health-2 {
+      border: 1px solid teal;
+      word-break: break-all;
+    }
+
+    .happy-smiles {
+      border: 1px solid teal;
+      padding: 5%;
+      column-gap: 40px;
+    }
+
+    .doctor-bg {
+      background-color: green;
+      height: 100px;
+    }
+
+    .doctor-p {
+      padding: 10px;
+      text-align: center;
+    }
+
+    .doctor-image {
+      height: 100px;
+      width: 100px;
+      border-radius: 50%;
+      position: absolute;
+      margin-top: -50px;
+      margin-left: -40px;
+    }
+
+    .footer {
+      background-color: teal;
+      height: 5px;
+      width: 100%;
+    }
+
+    body {
+      padding: 0;
+      margin: 0;
+      background-color: black;
+      font-family: "Open Sans", sans-serif;
+    }
+
+    .title {
+      font-size: 50px;
+      color: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-weight: bold;
+    }
+
+    .container {
+      background-color: black;
+      display: flex;
+      justify-content: space-evenly;
+      flex-wrap: wrap;
+    }
+
+    .container__elem {
+      padding: 3%;
+      display: flex;
+      flex-flow: column nowrap;
+      align-items: center;
+      flex: 1 1 0px;
+    }
+
+    .elem__block {
+      height: 190px;
+      width: 190px;
+      background-image: linear-gradient(to right, #f05a28, #ec008c);
+      border-radius: 5%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+    }
+    a:link { text-decoration: none; }
+
+    .elem__block:hover {
+      background: linear-gradient(145deg, #ff4000 0, #ff0099 100%);
+    }
+
+    .text {
+      color: white;
+      text-align: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .hover-img:hover {
+      transform: scale(1.1);
+    }
+  </style>
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+</head>
+
+<body>
+  <div class="header">
+    <a href="/" class="logo">Happify</a>
+    <!-- <a class="navbar-brand" href="/">
+          <div class="logo-image">
+                <img src="/logo.png" class="img-fluid">
+          </div> -->
+    </a>
+    <div class="header-right">
+      <a class="active" href="signup">Sign Up</a>
+      <a href="form">Consult</a>
+      <a href="https://pharmeasy.in/">Pharmacy</a>
+      <a href="https://www.parkwayeast.com.sg/healthplus/article/medical-conditions-list">Symptoms</a>
+    </div>
+  </div>
+  <hr />
+
+  <div class="main-area">
+    <div class="row bar">
+      <!-- <div class="col-sm-2 bar-1"><input type="text" placeholder="Enter location" class="search-bar" /></div>
+          <div class="col-sm-4 bar-1"><input type="text" placeholder="" class="search-bar" /></div> -->
+
+      <form class="d-flex">
+        <input class="form-control me-2" type="search" placeholder="Search, doctor, clinics and hospital"
+          aria-label="Search">
+        <button class="btn btn-outline-success" type="submit">Search</button>
+      </form>
+    </div>
+
+    <div class="col-sm-12 div-dental">
+      <h3 class="dental-heading"> Health Problems ? </h3>
+      <p>24/7 booking facility available with experienced and trusted near you. <br />Schedule hassle free consultations
+        for Online and In-Clinic visit to your doctor.</p>
+    </div>
+    <br />
+    <br />
+
+    <div class="row">
+      <div class="col-sm-6 dentists-near">
+        <div style="float:left">
+          <img src="https://th.bing.com/th/id/OIP.J1rJwZndGSdlapf37l0OtgHaEo?w=313&h=195&c=7&r=0&o=5&dpr=1.3&pid=1.7"
+            alt="me?" style="width: 475px;height: 355px;">
+        </div>
+        <div style="margin-top:2%"><b>Doctor near you</b>
+          <br />
+          <p style="word-break: break-all">
+            Select Doctor near you and select in-clinic consultation</p>
+          <button type="button" class="btn btn-outline-success"><a href="form" style="color: #828282;">Book Now</a></button>
+        </div>
+      </div>
+      <br />
+      <div class="col-sm-6 dentists-near">
+        <div>
+          <img src="https://th.bing.com/th/id/OIP.70VZJExiK-YLhdiz4Oc7iQHaFj?pid=ImgDet&rs=1" alt="online consultation"
+            style="float:left" />
+          <div style="margin-top: 2%">
+            <p><b>Online Consulation </b><br />
+              Select Doctor for online consultation
+            </p>
+            <br />
+            <button type="button" class="btn btn-outline-success"><a href="form" style="color: #606060;">Book Now</a></button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <br /><br /><br />
+
+    <div class="col" style="text-align:center">
+      <h3>Popular Doctor near you</h3>
+    </div>
+    <br /><br />
+    <div class="row dentist-div">
+      <div class="col-sm-3 dentists">
+        <div class="doctor-bg"></div>
+        <p class="doctor-p">
+          <img src="https://www.shutterstock.com/image-vector/vector-circle-icon-woman-doctor-260nw-1696089559.jpg"
+            alt="doctor1" class="doctor-image" />
+          <br /><br />
+          Dr. Ruhi Bhatia<br />
+          MDS-Orthodontist<br />
+          1.2 kms away<br />
+          (Available in next 45 minutes)
+        </p>
+      </div>
+      <br />
+      <div class="col-sm-3 dentists">
+        <div class="doctor-bg"></div>
+        <p class="doctor-p">
+          <img src="https://thumbs.dreamstime.com/b/male-doctor-icon-gray-background-male-doctor-icon-123766783.jpg"
+            alt="doctor1" class="doctor-image" />
+          <br /><br />
+          Dr. Shubham Gaikwad<br />
+
+          MBBS, MS, FLVPEI
+          <br />
+          2 kms away<br />
+          (Available in next 60 minutes)
+        </p>
+      </div>
+      <div class="col-sm-3 dentists">
+        <div class="doctor-bg"></div>
+        <p class="doctor-p">
+          <img src="https://thumbs.dreamstime.com/b/male-doctor-profile-icon-flat-style-vector-eps-147647776.jpg"
+            alt="doctor1" class="doctor-image" />
+          <br /><br />
+          Dr. Himanshu Singh<br />
+          MBBS, DCH, DNB, MRCPCH<br />
+          1.8 kms away<br />
+          (Available in next 57 minutes)
+        </p>
+      </div>
+    </div><br />
+    <div style="float:right"><b>See All</b></div>
+    <br />
+
+    <div style="text-align:center">
+      <h3>Know your Symptoms</h3>
+    </div><br /><br />
+    <div class="row symptoms">
+      <div class="col-sm-2 symptom">
+        <img src="https://th.bing.com/th/id/OIP.1-8vZCrNNuoiD992rkMayQHaF1?pid=ImgDet&w=4752&h=3744&rs=1" alt
+          style="height: 120px;">
+        <br />
+        Headache
+      </div>
+      <div class="col-sm-2 symptom">
+        <img src="https://th.bing.com/th/id/OIP.IoII3OtaqNCR4os8P7z4XAHaE8?pid=ImgDet&rs=1" alt style="height: 120px;">
+        <br />
+        Measles
+      </div>
+      <div class="col-sm-2 symptom">
+        <img src="https://www.pediatricsoffranklin.com/wp-content/uploads/2018/01/iStock-612381418.jpg" alt
+          style="height: 120px;">
+        <br />
+        Fever
+      </div>
+      <div class="col-sm-2 symptom">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTvTQVok8XTnhRpFtuOImv3Th9HMYlNSdCM7w&usqp=CAU"
+          alt style="height: 120px;">
+        <br />
+        Cough
+      </div>
+      <div class="col-sm-2 symptom">
+        <img src="https://th.bing.com/th/id/OIP.MfTAn3h2NOrCYY5YIIW2CAHaE8?w=303&h=202&c=7&r=0&o=5&dpr=1.3&pid=1.7" alt
+          style="height: 120px;">
+        <br />
+        Body Pain
+      </div>
+    </div>
+    <br />
+    <div style="float:right"><b>See All</b></div <br /><br /><br /><br />
+    <center>
+      <div style="text-align:center">
+        <h3>Health & you</h3>
+      </div>
+    </center>
+    <center>
+      <div class="row">
+        <div class="col-sm-5 dental-health-1">
+          <h5>
+            "The mouth is a window into the health of the body." Poor oral health can be a sign of underlying health
+            problems, making dental care an essential part of overall healthcare.</h5>
+        </div>
+        <div class="col-sm-5 dental-health-2">
+          <h5>Caring for your teeth is an investment in your overall health. Don't neglect it. This quote highlights the
+            importance of dental hygiene and encourages us to prioritize oral care for better health outcomes.</h5>
+        </div>
+      </div>
+    </center>
+
+    <br />
+
+    <div style="text-align:center">
+      <h3>Happy Smiles</h3>
+    </div>
+    <div class="row happy-smiles">
+      <div class="row happy-smiles"
+        style="padding-right: 65px;padding-left: 65px;padding-top: 65px;padding-bottom: 65px;">
+        <div class="col-sm-2">
+          <h6>Happy smiles after dental treatment are a testament to the transformative power of good dental care. With
+            healthy teeth and gums, people can enjoy greater confidence, comfort, and overall well-being, leading to a
+            brighter, happier outlook on life.</h6>
+        </div>
+        <div class="col-sm-2">
+          <h6>The chief condition on which life, health, and vigor depend on, is action. It is by action that an
+            organism develops its faculties, increases its energy, and attains the fulfillment of its destiny.”</h6>
+        </div>
+        <div class="col-sm-2">
+          <h6>“The secret of health for both mind and body is not to mourn for the past, not to worry about the future,
+            or not to anticipate troubles, but to live in the present moment wisely and earnestly.”</h6>
+        </div>
+        <div class="col-sm-2">
+          <h6>Health is a state of complete harmony of the body, mind and spirit. When one is free from physical
+            disabilities and mental distractions, the gates of the soul open.”</h6>
+        </div>
+        <div class="col-sm-2">
+          <h6>The chief condition on which life, health, and vigor depend on, is action. It is by action that an
+            organism develops its faculties, increases its energy, and attains the fulfillment of its destiny.</h6>
+        </div>
+        <br />
+      </div>
+
+      <br />
+
+    </div>
+    <div class="footer">
+    </div>
+
+    <h1 class="title">CONTACT US</h1>
+    <div class="container">
+      <div class="container__elem">
+        <div class="elem__block">
+          <a href="tel:18001234567">
+            <img class="hover-img" src="https://i.postimg.cc/XvK00tKD/call.png" width="50%" />
+          </a>
+          
+        </div>
+        <h2 class="text">CALL US</h2>
+        <p class="text">1800 247 745</p>
+      </div>
+      <div class="container__elem">
+        <div class="elem__block">
+          <a href="mailto:support@happify.in">
+            <img class="hover-img" src="https://i.postimg.cc/Fzzt3RM2/write.png" width="50%" />
+          </a>
+          
+        </div>
+        <h2 class="text">WRITE US</h2>
+        <a ></a>
+        <p class="text">support@happify.in</p>
+      </div>
+      <div class="container__elem">
+        <div class="elem__block">
+          <a href="faq">
+            <img class="hover-img" src="https://i.postimg.cc/tT2QsPM3/faq.png" width="50%" />
+          </a>
+        </div>
+        <h2 class="text">FAQ</h2>
+        <p class="text">Ask any Thing</p>
+      </div>
+
+      <script type="module" src="/styles.css"></script>
+      <script type="module" src="/app.js"></script>
+</body>
+
+</html>

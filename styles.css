@@ -1,0 +1,159 @@
+body {
+  /*   font-family: system-ui; */
+  /*   background: #f06d06; */
+  /*   color: white; */
+    text-align: center;
+  }
+  
+  
+  .header {
+    overflow: hidden;
+    padding: 20px 10px;
+  }
+  
+  .header a {
+    float: left;
+    color: black;
+    text-align: center;
+    padding: 12px;
+    text-decoration: none;
+    font-size: 18px; 
+    line-height: 25px;
+    border-radius: 4px;
+  }
+  
+  .header a.logo {
+    font-size: 25px;
+    font-weight: bold;
+  }
+  
+  .header a:hover {
+    background-color: #ddd;
+    color: black;
+  }
+  
+  .header a.active {
+    background-color: dodgerblue;
+    color: white;
+  }
+  
+  .header-right {
+    float: right;
+  }
+  
+  @media screen and (max-width: 500px) {
+    .header a {
+      float: none;
+      display: block;
+      text-align: left;
+    }
+    
+    .header-right {
+      float: none;
+    }
+  }
+  
+  .main-area {
+    margin-left: 10%;
+    margin-right: 10%;
+    margin: 1% 10% 1% 10%;
+  }
+  
+  .bar {
+    margin: 2% 0% 2% 0%;
+  }
+  
+  .bar-1 {
+    border: 1px solid teal;
+  }
+  
+  .search-bar {
+    width:100%;
+    border: 0px;
+  }
+  
+  .div-dental {
+    padding-left: 10%;
+    border: 1px solid teal;
+    color: lightblue;
+    background: url(https://th.bing.com/th/id/OIP.fv3xtmM7J2cPQV7SSVcKUQHaEK?w=296&h=180&c=7&o=5&dpr=2.5&pid=1.7);
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  
+  .dentists-near {
+    box-shadow: 15px 5px 15px teal;
+    display: inline-block;
+  }
+  
+  .dentist-div {
+    column-gap: 40px;
+    margin-left: 100px;
+  }
+  
+  .dentists {
+    border: 1px solid green;
+  }
+  
+  .doctor-image {
+     border-radius: 50%;
+      margin-top: 10px;
+    height: 50%;
+    width: 50%;
+  }
+  
+  .doctor-1 {
+    background-color: green;
+    height: 40%;
+    width:100%;
+  }
+  .symptoms {
+    column-gap: 40px;
+  }
+  
+  .symptom {
+    border: 1px solid green;
+  }
+  .icons {
+    font-size:72px
+  }
+  
+  .dental-health-1 {
+    margin-left: 40px;
+    margin-right: 45px;
+    border: 1px solid teal;
+    word-break: break-all;
+  }
+  
+  .dental-health-2 {
+    border: 1px solid teal;
+    word-break: break-all;
+  }
+  
+  .happy-smiles {
+    border: 1px solid teal;
+    padding: 5%;
+    column-gap: 40px;
+  }
+  .doctor-bg {
+    background-color: green;
+    height: 100px;
+  }
+  .doctor-p {
+    padding: 10px;
+    text-align: center;
+  }
+  
+  .doctor-image {
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+    position: absolute;
+    margin-top: -50px;
+    margin-left: -40px;
+  }
+  .footer {
+    background-color: teal;
+    height: 100px;
+    width: 100%;
+  }
